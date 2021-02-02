@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
-from blog.models import PostBlogModel, PostWorkModel
+from blog.models import PostBlogModel, PostWorkModel, CategoryModel
 
 
 class TopView(ListView):
@@ -34,6 +34,16 @@ class WorkDetailView(DetailView):
 class BlogDetailView(DetailView):
     template_name = 'blogdetail.html'
     model = PostBlogModel
+
+
+class CategoryListView(ListView):
+    template_name = 'categorylist.html'
+    model = CategoryModel
+
+
+class CategoryDetailView(ListView):
+    template_name = 'categorydetail.html'
+    model = CategoryModel
 
 
 class AboutView(TemplateView):
