@@ -1,4 +1,5 @@
 <h1>Top</h1>
+
 <h2>work</h2>
 {% for item in work_list %}
     <p><a href="{% url 'workdetail' item.pk %}">タイトル：{{ item.title }}</a></p>
@@ -13,3 +14,5 @@
     <p>カテゴリ：{{ item.category.name }}</p>
 {% endfor %}
 <a href="{% url 'bloglist' %}">blog一覧</a>
+
+<p><a href="{% url 'about' %}">about</a></p>
