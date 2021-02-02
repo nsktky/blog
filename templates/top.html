@@ -1,6 +1,14 @@
-{% for item in object_list %}
-<p>タイトル：{{ item.title }}</p>
-<p>内容：{{ item.content | linebreaks }}</p>
-<p>カテゴリ：{{ item.category.name }}</p>
-<p>公開日：{{ item.published_at }}</p>
+<h1>work</h1>
+{% for item in work_list %}
+    <p>タイトル：{{ item.title }}</p>
+    <p>カテゴリ：{{ item.category.name }}</p>
+    <p>公開日：{{ item.published_at }}</p>
+{% endfor %}
+
+
+<h1>blog</h1>
+{% for item in blog_list %}
+    <p>タイトル：{{ item.title }}</p>
+    <p>カテゴリ：{{ item.category.name }}</p>
+    <p>公開日：{{ item.published_at }}</p>
 {% endfor %}
