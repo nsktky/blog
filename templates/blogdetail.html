@@ -1,0 +1,8 @@
+<p>タイトル：{{ object.title }}</p>
+<p>投稿日：{{ object.created_at }}</p>
+<p>本文：{{ object.content }}</p>
+{% if object.category is None %}
+<p>カテゴリはありません。</p>
+{% else %}
+<p>カテゴリ：{{ object.category }}</p>
+{% endif %}

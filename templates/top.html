@@ -1,14 +1,13 @@
 <h1>work</h1>
 {% for item in work_list %}
     <p>タイトル：{{ item.title }}</p>
-    <p>カテゴリ：{{ item.category.name }}</p>
-    <p>公開日：{{ item.published_at }}</p>
+    <p>投稿日：{{ item.created_at }}</p>
 {% endfor %}
 
 
 <h1>blog</h1>
 {% for item in blog_list %}
     <p>タイトル：{{ item.title }}</p>
+    <p>投稿日：{{ item.created_at }}</p>
     <p>カテゴリ：{{ item.category.name }}</p>
-    <p>公開日：{{ item.published_at }}</p>
 {% endfor %}
