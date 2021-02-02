@@ -1,6 +1,4 @@
 {% for item in object_list %}
-    <p>タイトル：{{ item.title }}</p>
+    <p><a href="{% url 'workdetail' item.pk %}">タイトル：{{ item.title }}</a></p>
     <p>投稿日：{{ item.created_at }}</p>
-    <p>内容：{{ item.content | linebreaks }}</p>
-    <p>カテゴリ：{{ item.category.name }}</p>
 {% endfor %}
