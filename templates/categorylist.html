@@ -1,4 +1,4 @@
 <p>カテゴリ一覧</p>
 {% for item in object_list %}
-<p>・{{ item.category }}</p>
+<p><a href="{% url 'categorydetail' item.slug %}">・{{ item.name }}</a></p>
 {% endfor %}

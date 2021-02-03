@@ -10,6 +10,6 @@ urlpatterns = [
     path('blog/<int:pk>/', BlogDetailView.as_view(), name='blogdetail'),
     path('about/', AboutView.as_view(), name='about'),
     path('categories/', CategoryListView.as_view(), name='categorylist'),
-    path('category/<str:sulg>/', CategoryDetailView.as_view(), name='categorydetail'),
+    path('category/<str:slug>/', CategoryDetailView.as_view(), name='categorydetail'),
 
 ]

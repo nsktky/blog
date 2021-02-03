@@ -1,1 +1,8 @@
-categoryddetail
+<h1>「{{ category.name }}」の投稿一覧</h1>
+<ul>
+  {% for item in object_list %}
+  <li><a href="{% url 'blogdetail' item.pk %}">{{ item.title }}</a></li>
+  {% empty %}
+  <li>まだ投稿はありません。</li>
+  {% endfor %}
+</ul>

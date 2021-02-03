@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, TemplateView
 from blog.models import PostBlogModel, PostWorkModel, CategoryModel
 
@@ -43,8 +43,21 @@ class CategoryListView(ListView):
 
 class CategoryDetailView(ListView):
     template_name = 'categorydetail.html'
-    model = CategoryModel
+    model = PostBlogModel
 
+    def get_queryset(self):
+            # urlsから渡されるslugをオブジェクト化
+            slug = self.kwargs['slug']
+            # CategoryModelのsulgと上記のslugが一致するものを取得
+            self.category = get_object_or_404(CategoryModel, slug=slug)
+            # PostBlogModel内のcategoryと上記categoryが一致するデータのクエリセットを取得
+            qs = super().get_queryset().filter(category=self.category)
+            return qs
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['category'] = self.category
+        return context
 
 class AboutView(TemplateView):
     template_name = 'about.html'
