@@ -1,9 +1,19 @@
-{% for item in object_list %}
-    <p><a href="{% url 'blogdetail' item.pk %}">タイトル：{{ item.title }}</a></p>
-    <p>投稿日：{{ item.created_at }}</p>
-    {% if item.category is None %}
-    <p>カテゴリはありません。</p>
-    {% else %}
-    <p>カテゴリ：{{ item.category.name }}</p>
-    {% endif %}
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block title %}blog一覧{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-secondary" role="alert">
+        {% for item in object_list %}
+        <p><a href="{% url 'blogdetail' item.pk %}">タイトル：{{ item.title }}</a></p>
+        <p>投稿日：{{ item.created_at }}</p>
+        {% if item.category is None %}
+        <p>カテゴリはありません。</p>
+        {% else %}
+        <p>カテゴリ：{{ item.category.name }}</p>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

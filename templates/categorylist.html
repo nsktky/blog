@@ -1,4 +1,14 @@
-<p>カテゴリ一覧</p>
-{% for item in object_list %}
-<p><a href="{% url 'categorydetail' item.slug %}">・{{ item.name }}</a></p>
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block title %}カテゴリ一覧{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-secondary" role="alert">
+        <p>カテゴリ一覧</p>
+        {% for item in object_list %}
+        <p><a href="{% url 'categorydetail' item.slug %}">・{{ item.name }}</a></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
