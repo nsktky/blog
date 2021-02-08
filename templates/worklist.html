@@ -3,12 +3,26 @@
 {% block title %}work一覧{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="alert alert-secondary" role="alert">
-        {% for item in object_list %}
-        <p><a href="{% url 'workdetail' item.pk %}">タイトル：{{ item.title }}</a></p>
-        <p>投稿日：{{ item.created_at }}</p>
-        {% endfor %}
+
+<div class="container py-5">
+    <h2>work一覧</h2>
+    <p>製作物の一覧</p>
+    <div class="card-deck">
+        <div class="row">
+            {% for item in object_list %}
+            <div class="col-sm-4 py-2">
+                <div class="card h-100">
+                    <img class="card-img-top" src="#.jpg" alt="ダミーテキスト">
+                    <div class="card-body">
+                        <p class="card-title">{{ item.title }}</p>
+                        <p class="card-text">{{ item.content | truncatechars:20 }}</p>
+                        <p class="card-text bu"><a href="{% url 'workdetail' item.pk %}">よむ</a></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
+
 {% endblock %}
