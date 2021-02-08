@@ -3,16 +3,26 @@
 {% block title %}{{ category.name }}の投稿一覧{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="alert alert-secondary" role="alert">
-    <h1>「{{ category.name }}」の投稿一覧</h1>
-    <ul>
-    {% for item in object_list %}
-    <li><a href="{% url 'blogdetail' item.pk %}">{{ item.title }}</a></li>
-    {% empty %}
-    <li>まだ投稿はありません。</li>
-    {% endfor %}
-    </ul>
+
+<div class="container py-5">
+  <h2 class="text-center pb-5">「{{ category.name }}」の一覧</h2>
+  <div class="card-deck">
+      <div class="row">
+          {% for item in object_list %}
+          <div class="col-sm-4 py-2">
+              <div class="card h-100">
+                  <img class="card-img-top" src="#.jpg" alt="ダミーテキスト">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ item.title }}</h5>
+                      <p class="card-text">{{ item.content | truncatechars:20 }}</p>
+                      <p class="card-text bu"><a href="{% url 'blogdetail' item.pk %}" class="btn btn-outline-dark btn-sm mt-2" role="button">よむ</a></p>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
   </div>
 </div>
+
+
 {% endblock %}

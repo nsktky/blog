@@ -5,21 +5,22 @@
 {% block content %}
 
 <div class="container mt-2 pb-5">
-    <div class="card text-center">
+    <div class="card">
         <div class="card-body">
-            <h4 class="card-title pb-2">{{ object.title }}</h4>
+            <h2 class="card-title pb-2">{{ object.title }}</h2>
             <p class="card-text">{{ object.content | linebreaksbr }}</p>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"></li>
-                <li class="list-group-item">
-                    {% if object.category is None %}
-                    カテゴリはありません
-                    {% else %}
-                    カテゴリ：{{ object.category }}
-                    {% endif %}
-                </li>
-            </ul>
         </div>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                {% if object.category is None %}
+                カテゴリはありません
+                {% else %}
+                カテゴリ：<a href="{% url 'categorydetail' object.category.slug %}" >{{ object.category.name }}</a>
+                {% endif %}
+            </li>
+        </ul>
+
         <div class="card-footer text-muted">
             {{ object.created_at }}
         </div>
