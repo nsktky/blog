@@ -5,8 +5,8 @@
 {% block content %}
 
 <div class="container py-5">
-    <h2>Blog一覧</h2>
-    <p>記事たちの一覧</p>
+    <h1 class="text-center">Blog一覧</h1>
+    <p class="text-center">記事たちの一覧</p>
     <div class="card-deck">
         <div class="row">
             {% for item in object_list %}
@@ -14,15 +14,14 @@
                 <div class="card h-100">
                     <img class="card-img-top" src="#.jpg" alt="ダミーテキスト">
                     <div class="card-body">
-                        <p class="card-title">{{ item.title }}</p>
+                        <h5 class="card-title">{{ item.title }}</h5>
                         <p class="card-text">{{ item.content | truncatechars:20 }}</p>
-
                         <p class="card-text">
                             {% if item.category is None %}カテゴリはありません
-                            {% else %}{{ item.category.name }}
+                            {% else %}カテゴリ：{{ item.category.name }}
                             {% endif %}
                         </p>
-                        <p class="card-text bu"><a href="{% url 'blogdetail' item.pk %}">よむ</a></p>
+                        <p class="card-text bu"><a href="{% url 'blogdetail' item.pk %}" class="btn btn-outline-dark btn-sm mt-2" role="button">よむ</a></p>
                     </div>
                 </div>
             </div>

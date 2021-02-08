@@ -3,11 +3,17 @@
 {% block title %}work{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="alert alert-secondary" role="alert">
-        <p>タイトル：{{ object.title }}</p>
-        <p>投稿日：{{ object.created_at }}</p>
-        <p>内容：{{ object.content }}</p>
+
+<div class="container mt-2 pb-5">
+    <div class="card text-center">
+        <div class="card-body">
+            <h4 class="card-title pb-2">{{ object.title }}</h4>
+            <p class="card-text">{{ object.content | linebreaksbr }}</p>
+        </div>
+        <div class="card-footer text-muted">
+            {{ object.created_at }}
+        </div>
     </div>
 </div>
+
 {% endblock %}

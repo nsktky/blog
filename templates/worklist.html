@@ -5,8 +5,8 @@
 {% block content %}
 
 <div class="container py-5">
-    <h2>work一覧</h2>
-    <p>製作物の一覧</p>
+    <h1 class="text-center">work一覧</h1>
+    <p class="text-center">製作物の一覧</p>
     <div class="card-deck">
         <div class="row">
             {% for item in object_list %}
@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <p class="card-title">{{ item.title }}</p>
                         <p class="card-text">{{ item.content | truncatechars:20 }}</p>
-                        <p class="card-text bu"><a href="{% url 'workdetail' item.pk %}">よむ</a></p>
+                        <p class="card-text bu"><a href="{% url 'workdetail' item.pk %}" class="btn btn-outline-dark btn-sm mt-2" role="button">よむ</a></p>
                     </div>
                 </div>
             </div>
