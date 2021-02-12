@@ -11,7 +11,9 @@
           {% for item in object_list %}
           <div class="col-sm-4 py-2">
               <div class="card h-100">
-                  <img class="card-img-top" src="#.jpg" alt="ダミーテキスト">
+                {% if item.image %}
+                <img class="card-img-top img-thumbnail" src="{{ item.image.url }}" alt="{{ item.title }}">
+                {% endif %}
                   <div class="card-body">
                       <h5 class="card-title">{{ item.title }}</h5>
                       <p class="card-text">{{ item.content | truncatechars:20 }}</p>

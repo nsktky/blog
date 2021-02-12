@@ -51,7 +51,7 @@ class CategoryDetailView(ListView):
             # CategoryModelのsulgと上記のslugが一致するものを取得
             self.category = get_object_or_404(CategoryModel, slug=slug)
             # PostBlogModel内のcategoryと上記categoryが一致するデータのクエリセットを取得
-            qs = super().get_queryset().filter(category=self.category)
+            qs = super().get_queryset().filter(category=self.category).order_by('-created_at')
             return qs
 
     def get_context_data(self, *args, **kwargs):
