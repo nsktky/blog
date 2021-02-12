@@ -6,8 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 pillow = "*"
+gunicorn = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.8"
+
+web: gunicorn blog.wsgi --log-file -
