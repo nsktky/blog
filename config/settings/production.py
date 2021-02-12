@@ -1,3 +1,5 @@
+# 本番環境用設定ファイル
+
 from .base import *
 import os
 
