@@ -5,7 +5,7 @@ import os
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["ayameblog.herokuapp.com"]
 
