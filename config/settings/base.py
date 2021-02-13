@@ -122,3 +122,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media_root')
 STATICFILES_DIRS = [str(BASE_DIR / 'staticfiles')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+DEBUG = False
+
+ALLOWED_HOSTS = ["ayameblog.herokuapp.com"]
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
