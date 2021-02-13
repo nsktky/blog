@@ -1,7 +1,6 @@
 # 本番環境用設定ファイル
 
 from .base import *
-import os
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
