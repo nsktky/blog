@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['ayameblog.herokuapp.com']
+ALLOWED_HOSTS = ["*"]
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
