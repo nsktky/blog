@@ -30,13 +30,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'blog.apps.BlogConfig',
+
     'cloudinary',
     'cloudinary_storage',
-]
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
