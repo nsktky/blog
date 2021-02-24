@@ -1,3 +1,4 @@
+"""
 #blogの作成
 ##djangoでblogサイトを構築しherokuでデプロイ
 -class based view で作成
@@ -7,3 +8,4 @@
 -画像アップロードにはcloudinaryを使用
 -heroku環境でPostgresを使用するためdj_database_urlを使用
 -whitenoiseで静的ファイルを配信
+"""
