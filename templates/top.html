@@ -11,7 +11,7 @@
     <div class="card-deck">
         <div class="row">
             {% for item in work_list %}
-            <div class="col-sm-4">
+            <div class="col-sm-4  py-2">
                 <div class="card h-100">
                     {% if item.image %}
                     <img class="card-img-top img-thumbnail" src="{{ item.image.url }}" alt="{{ item.title }}">
@@ -33,10 +33,10 @@
 <div class="container py-5">
     <h2 class="text-center pb-2">Blog</h2>
     <p class="text-center">日々のきろくたち</p>
-    <div class="card-deck"> 
+    <div class="card-deck">
         <div class="row">
             {% for item in blog_list %}
-            <div class="col-sm-4">
+            <div class="col-sm-4  py-2">
                 <div class="card h-100">
                     {% if item.image %}
                     <img class="card-img-top img-thumbnail" src="{{ item.image.url }}" alt="{{ item.title }}">
